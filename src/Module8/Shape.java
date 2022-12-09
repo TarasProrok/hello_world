@@ -1,9 +1,65 @@
 package Module8;
 
-import java.util.Scanner;
-
 class Shape {
-    private static Circle circle = new Circle();
+    public String toString() {
+        return null;
+    }
+}
+    class Circle extends Shape {
+    @Override
+    public String toString() {
+            return "Circle";
+        }
+    }
+    class Triangle extends Shape {
+    @Override
+        public String toString() {
+        return "Triangle";
+        }
+    }
+    class Quad extends Shape {
+    @Override
+        public String toString () {
+        return "Quad";
+        }
+    }
+    class Pentagon extends Shape {
+    @Override
+        public String toString () {
+        return "Pentagon";
+        }
+    }
+    class Hexagon extends Shape {
+    @Override
+        public String toString () {
+        return "Hexagon";
+        }
+    }
+    class Heptagon extends Shape {
+    @Override
+        public String toString () {
+        return "Heptagon";
+        }
+    }
+    class Octagon extends Shape {
+    @Override
+        public String toString () {
+        return "Octagon";
+        }
+    }
+    class Nonagon extends Shape {
+    @Override
+        public String toString() {
+        return "Nonagon";
+        }
+    }
+    class ShapePrinter {
+        public static void shapePrinter(Shape shape) {
+            System.out.println(shape.toString());
+        }
+    }
+class ShapePrinterTest {
+    private static  Circle circle = new Circle();
     private static Triangle triangle = new Triangle();
     private static Quad quad = new Quad();
     private static Pentagon pentagon = new Pentagon();
@@ -11,86 +67,38 @@ class Shape {
     private static Heptagon heptagon = new Heptagon();
     private static Octagon octagon = new Octagon();
     private static Nonagon nonagon = new Nonagon();
+    public static Circle getCircle() {
+        return circle;
+    }
 
+    public static Triangle getTriangle() {
+        return triangle;
+    }
 
-    static void printShapeName() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Input number of angles from 3 to 9 or 0: ");
-        int angles = scanner.nextInt();
-        switch (angles) {
-            case 0:
-                circle.circleShape();
-            case 3:
-                triangle.triangleShape();
-                break;
-            case 4:
-                quad.quadShape();
-                break;
-            case 5:
-                pentagon.pentagonShape();
-                break;
-            case 6:
-                hexagon.hexagonShape();
-                break;
-            case 7:
-                heptagon.heptagonShape();
-                break;
-            case 8:
-                octagon.octagonShape();
-                break;
-            case 9:
-                nonagon.nonagonShape();
-                break;
-            default:
-                System.out.println("No shape!");
+    public static Quad getQuad() {
+        return quad;
+    }
+
+    public static Pentagon getPentagon() {
+        return pentagon;
+    }
+
+    public static Hexagon getHexagon() {
+        return hexagon;
+    }
+
+    public static Heptagon getHeptagon() {
+        return heptagon;
+    }
+
+    public static Octagon getOctagon() {
+        return octagon;
+    }
+
+    public static Nonagon getNonagon() {
+        return nonagon;
+    }
+        public static void main(String[] args) {
+            ShapePrinter.shapePrinter(getNonagon());
         }
     }
-}
-
- class Circle extends Shape {
-     public void circleShape() {
-         System.out.println("Circle");
-     }
-    }
-class Triangle extends Shape {
-    public void triangleShape() {
-        System.out.println("Triangle");
-    }
-}
-class Quad extends Shape {
-    public void quadShape() {
-        System.out.println("Quad");
-    }
-}
-class Pentagon extends Shape {
-    public void pentagonShape() {
-        System.out.println("Pentagon");
-    }
-}
-class Hexagon extends Shape {
-    public void hexagonShape() {
-        System.out.println("Hexagon");
-    }
-}
-class Heptagon extends Shape {
-    public void heptagonShape() {
-        System.out.println("Heptagon");
-    }
-}
-class Octagon extends Shape {
-    public void octagonShape() {
-        System.out.println("Octagon");
-    }
-}
-class Nonagon extends Shape {
-    public void nonagonShape() {
-        System.out.println("Nonagon");
-    }
-}
-
-
-class ShapeTest {
-    public static void main(String[] args) {
-        Shape.printShapeName();
-    }
-}
