@@ -15,7 +15,7 @@ class Shape {
 
     static void printShapeName() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Input number of angles from 3 to 9 or 0: ");
+        System.out.print("Input number of angles from 3 to 9 or 0: ");
         int angles = scanner.nextInt();
         switch (angles) {
             case 0:
