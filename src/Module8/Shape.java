@@ -1,5 +1,7 @@
 package Module8;
 
+import java.util.Scanner;
+
 class Shape {
     public String toString() {
         return null;
@@ -99,6 +101,35 @@ class ShapePrinterTest {
         return nonagon;
     }
         public static void main(String[] args) {
-            ShapePrinter.shapePrinter(getNonagon());
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Input number of angles from 3 to 9 or 0: ");
+            int angles = scanner.nextInt();
+            switch (angles) {
+                case 0:
+                    ShapePrinter.shapePrinter(getCircle());
+                case 3:
+                    ShapePrinter.shapePrinter(getTriangle());
+                    break;
+                case 4:
+                    ShapePrinter.shapePrinter(getQuad());
+                    break;
+                case 5:
+                    ShapePrinter.shapePrinter(getPentagon());
+                    break;
+                case 6:
+                    ShapePrinter.shapePrinter(getHexagon());
+                    break;
+                case 7:
+                    ShapePrinter.shapePrinter(getHeptagon());
+                    break;
+                case 8:
+                    ShapePrinter.shapePrinter(getOctagon());
+                    break;
+                case 9:
+                    ShapePrinter.shapePrinter(getNonagon());
+                    break;
+                default:
+                    System.out.println("No shape defined!");
+            }
         }
     }
