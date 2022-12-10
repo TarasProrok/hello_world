@@ -61,43 +61,43 @@ class Shape {
         }
     }
 class ShapePrinterTest {
-    private static  Circle circle = new Circle();
-    private static Triangle triangle = new Triangle();
-    private static Quad quad = new Quad();
-    private static Pentagon pentagon = new Pentagon();
-    private static Hexagon hexagon = new Hexagon();
-    private static Heptagon heptagon = new Heptagon();
-    private static Octagon octagon = new Octagon();
-    private static Nonagon nonagon = new Nonagon();
-    public static Circle getCircle() {
+    private static final Shape circle = new Circle();
+    private static final Shape triangle = new Triangle();
+    private static final Shape quad = new Quad();
+    private static final Shape pentagon = new Pentagon();
+    private static final Shape hexagon = new Hexagon();
+    private static final Shape heptagon = new Heptagon();
+    private static final Shape octagon = new Octagon();
+    private static final Shape nonagon = new Nonagon();
+    public static Shape getCircle() {
         return circle;
     }
 
-    public static Triangle getTriangle() {
+    public static Shape getTriangle() {
         return triangle;
     }
 
-    public static Quad getQuad() {
+    public static Shape getQuad() {
         return quad;
     }
 
-    public static Pentagon getPentagon() {
+    public static Shape getPentagon() {
         return pentagon;
     }
 
-    public static Hexagon getHexagon() {
+    public static Shape getHexagon() {
         return hexagon;
     }
 
-    public static Heptagon getHeptagon() {
+    public static Shape getHeptagon() {
         return heptagon;
     }
 
-    public static Octagon getOctagon() {
+    public static Shape getOctagon() {
         return octagon;
     }
 
-    public static Nonagon getNonagon() {
+    public static Shape getNonagon() {
         return nonagon;
     }
         public static void main(String[] args) {
@@ -107,6 +107,7 @@ class ShapePrinterTest {
             switch (angles) {
                 case 0:
                     ShapePrinter.shapePrinter(getCircle());
+                    break;
                 case 3:
                     ShapePrinter.shapePrinter(getTriangle());
                     break;
