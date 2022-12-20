@@ -50,7 +50,7 @@ public class MyStack {
 
     //function to delete an element at the given index
     public void remove(int index) {
-        if (index > length) {
+        if (index > length || index < 0) {
             throw new ArrayIndexOutOfBoundsException();
         } else {
             Node node = head;
