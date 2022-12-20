@@ -69,6 +69,13 @@ public class MyStack {
     }
 
     public void clear() {
+        Node currentNode = head;
+        for (; currentNode != null; ) {
+            Node next = currentNode.getNextNode();
+            currentNode.setData(null);
+            currentNode.setNextNode(null);
+            currentNode = next;
+        }
         head = null;
         length = 0;
         System.out.println("List is cleared!");

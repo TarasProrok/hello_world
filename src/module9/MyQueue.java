@@ -54,15 +54,21 @@ public class MyQueue {
     }
 
     public void clear() {
-        head = null;
-        tail = null;
+        Node currentNode = head;
+        for (; currentNode != null; ) {
+            Node next = currentNode.getNextNode();
+            currentNode.setData(null);
+            currentNode.setNextNode(null);
+            currentNode = next;
+        }
+        head = tail = null;
         length = 0;
         System.out.println("List is cleared!");
     }
     public void show() {
         Node newNode = head;
         if (newNode == null) {
-            System.out.println("Linked list is empty");
+            System.out.println("list is empty");
         } else {
             while (newNode != null) {
                 System.out.print(newNode.getData() + " ");

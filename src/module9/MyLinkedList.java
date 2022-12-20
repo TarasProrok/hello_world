@@ -1,4 +1,7 @@
 package module9;
+
+import java.util.LinkedList;
+
 public class MyLinkedList {
     private int length;
     private Node head;
@@ -25,13 +28,17 @@ public class MyLinkedList {
 
     //function to delete an element at the given index
     public void remove(int index) {
-        Node temp = head;
-        for(int i = 0; i < index; i++){
-            temp = temp.getNextNode();
+        if (index > 0 && index <= length) {
+            Node temp = head;
+            for (int i = 0; i < index; i++) {
+                temp = temp.getNextNode();
+            }
+            temp.getPreviousNode().setNextNode(temp.getNextNode());
+            temp.getNextNode().setPreviousNode(temp.getPreviousNode());
+            length--;
+        } else {
+            throw new ArrayIndexOutOfBoundsException();
         }
-        temp.getPreviousNode().setNextNode(temp.getNextNode());
-        temp.getNextNode().setPreviousNode(temp.getPreviousNode());
-        length--;
     }
 
     //function to show the list
@@ -57,7 +64,7 @@ public class MyLinkedList {
     //function to show the data by index
     public Object get(int index) {
         Node temp = head;
-        while (index > 0) {
+        while (index > 0 && index < length) {
             index--;
             temp = temp.getNextNode();
             if (temp == null) {
@@ -70,7 +77,16 @@ public class MyLinkedList {
 
     //function to clear the list
     public void clear() {
-        head = null;
+        Node currentNode = head;
+        for ( ; currentNode != null; ) {
+            Node next = currentNode.getNextNode();
+            currentNode.setData(null);
+            currentNode.setNextNode(null);
+            currentNode.setPreviousNode(null);
+            currentNode = next;
+        }
+        head = tail = null;
+        length = 0;
     }
 }
 

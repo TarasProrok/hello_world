@@ -13,6 +13,7 @@ public class MyArrayList {
     public void add(Object obj) {
         if (myStore.length - actSize < 5) {
             increaseSize();
+            myStore[actSize++] = obj;
         } else {
             myStore[actSize++] = obj;
         }
@@ -24,7 +25,7 @@ public class MyArrayList {
 
     //function to show the data by index
     public Object get(int index) {
-        if (index < actSize) {
+        if (index < actSize && index >= 0) {
             System.out.println("Data in index " + index + " is " + myStore[index]);
             return myStore[index];
         } else {
@@ -53,7 +54,7 @@ public class MyArrayList {
 
     //function to delete an element at the given index
     public void remove(int index) {
-        if (index > actSize) {
+        if (index > actSize || index < 0) {
             throw new ArrayIndexOutOfBoundsException();
         } else {
             System.out.println("Element to remove " + myStore[index]);
@@ -67,9 +68,10 @@ public class MyArrayList {
 
     //function to clear the list
     public void clear() {
-        myStore = Arrays.copyOf(myStore, 0);
-        actSize = 0;
-        System.out.println("List is cleared!");
+        for (int i = 0; i < myStore.length; i++) {
+            myStore[i] = null;
+            System.out.println("List is cleared!");
+        }
     }
 }
 class MyArrayListTest {
@@ -77,6 +79,15 @@ class MyArrayListTest {
         MyArrayList my = new MyArrayList();
 
         my.add(10);
+        my.add(20);
+        my.add(30);
+        my.add(40);
+        my.add(50);
+        my.add(10);
+        my.add(20);
+        my.add(30);
+        my.add(40);
+        my.add(50);my.add(10);
         my.add(20);
         my.add(30);
         my.add(40);
